@@ -96,7 +96,7 @@ def generate_prediction(train_set, class_ids, test_set, k):
 first_class, second_class, train_set, class_ids, test_set = generate_datasets(amount_of_observations=400,
                                                                               training_set_ratio=0.67)
 
-true_prediction, false_prediction = generate_prediction(train_set, class_ids, test_set, 15)
+true_prediction, false_prediction = generate_prediction(train_set, class_ids, test_set, k=15)
 
 print("Accuracy rate: {}%".format(accuracy(true_prediction, false_prediction)))
 

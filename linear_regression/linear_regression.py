@@ -7,7 +7,7 @@ def main(filename):
     dots = get_data(filename=filename)
 
     def func(coeff):
-        return cost_fucntion(coeff, dots)
+        return cost_function(coeff, dots)
 
     x0 = np.array([6.1, 1.2])
     res = scipy.optimize.minimize(func, x0, method='nelder-mead',
@@ -32,7 +32,7 @@ def get_data(filename):
     return np.genfromtxt(filename, delimiter=',')
 
 
-def cost_fucntion(coeff, dots):
+def cost_function(coeff, dots):
     cost = 0
     N = len(dots)
 

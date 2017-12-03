@@ -65,8 +65,8 @@ def predict(train_set, class_ids, test_set, k):
 
             paired_set = np.array([[distances[j], class_ids[j]] for j in np.argsort(distances)])
 
-            new_set = paired_set[-k:]
-            pred = np.abs(1 - int(scipy.stats.mode(new_set[:, 1]).mode))
+            new_set = paired_set[:k]
+            pred = int(scipy.stats.mode(new_set[:, 1]).mode)
 
             if id == 0:
                 prediction_0.append(pred)
